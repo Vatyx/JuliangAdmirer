@@ -58,7 +58,7 @@ function respond() {
 
 function postMessage(claytonPost) {
   var botResponse, options, body, botReq;
-
+  var botID = "df362d235b05b48e3ca28b9405"
   botResponse = niceComments[Math.floor(Math.random() * (niceComments.length))];
   options = {
     hostname: 'api.groupme.com',
