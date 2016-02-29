@@ -43,7 +43,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/Juliang$/;
     var validText = request.text.indexOf("Juliang") > -1 || request.text.indexOf("juliang") > -1;
-    var validText1 = request.text.indexOf("another one") > -1 || request.text.indexOf("another one") > -1;
+    var validText1 = request.text.indexOf("another one".toLowerCase()) > -1 || request.text.indexOf("another one") > -1;
   console.log(request);
   if(request.text && validText && request.name != "Juliang\'s Public Admirer" ) {
     this.res.writeHead(200);
