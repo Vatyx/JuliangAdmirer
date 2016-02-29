@@ -62,7 +62,7 @@ function respond() {
   }
 }
 
-function postMessage(claytonPost) {
+function postMessage(claytonPost, something) {
   var botResponse, options, body, botReq;
   var botID = "df362d235b05b48e3ca28b9405"
   botResponse = niceComments[Math.floor(Math.random() * (niceComments.length))];
