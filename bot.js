@@ -43,11 +43,17 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/Juliang$/;
     var validText = request.text.indexOf("Juliang") > -1 || request.text.indexOf("juliang") > -1;
+    var validText1 = request.text.indexOf("another one") > -1 || request.text.indexOf("another one") > -1;
   console.log(request);
   if(request.text && validText && request.name != "Juliang\'s Public Admirer" ) {
     this.res.writeHead(200);
-    postMessage(false);
+    postMessage(false,false);
     this.res.end();
+  }
+  else if(request.text && validText1 && request.name != "Juliang\'s Public Admirer") {
+	this.res.writeHead(200);
+	postMessage(false, true);
+	this.res.end();
   }
   else {
     console.log("don't care");
@@ -90,6 +96,14 @@ function postMessage(claytonPost) {
           "text": botResponse
       };
   //}
+  if(something) {
+  	body = {
+		"bot_id": botID,
+		"text": "",
+		"picture_url": "https://i.groupme.com/600x302.gif.8d9a7335a10441afb7b520eea3d36065"
+		
+	}
+  }
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
